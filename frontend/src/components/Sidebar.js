@@ -24,23 +24,13 @@ const Sidebar = () => {
 
       <nav className="sidebar-nav">
         {menuItems.map((item) => (
-          <button
-            key={item.id}
-            className={`sidebar-nav-item ${isActive(item.path) ? 'active' : ''}`}
-            onClick={() => navigate(item.path)}
-          >
+          <button key={item.id} className={`sidebar-nav-item ${isActive(item.path) ? 'active' : ''}`} onClick={() => navigate(item.path)}>
             <span className="sidebar-nav-icon">{item.icon}</span>
             <span>{item.label}</span>
           </button>
         ))}
       </nav>
 
-      <div className="sidebar-footer">
-        <div className="sidebar-status">
-          <div className="status-dot"></div>
-          <span>Operational</span>
-        </div>
-      </div>
     </aside>
   );
 };

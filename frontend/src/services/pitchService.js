@@ -1,19 +1,4 @@
-import api from './api';
-
-// Generate sales pitch
-export const generatePitch = async (pitchData) => {
-  const response = await api.post('/pitch/generate', pitchData);
-  return response.data;
-};
-
-// Get pitch history
-export const getPitchHistory = async () => {
-  const response = await api.get('/pitch/history');
-  return response.data;
-};
-
-// Get pitch by ID
-export const getPitchById = async (id) => {
-  const response = await api.get(`/pitch/${id}`);
-  return response.data;
-};
+import { generatePitch } from './groqClient';
+export { generatePitch };
+export const getPitchHistory = async () => [];
+export const getPitchById = async () => null;

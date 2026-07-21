@@ -1,9 +1,13 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useApiKey } from '../context/ApiKeyContext';
 import './Home.css';
 
 const Home = () => {
   const navigate = useNavigate();
+  const { loading } = useApiKey();
+
+  if (loading) return <div className="home" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh' }}>Loading...</div>;
 
   return (
     <div className="home">
@@ -11,8 +15,8 @@ const Home = () => {
         <div className="home-nav-content">
           <div className="home-logo">MarketMind</div>
           <div className="home-nav-actions">
-            <button className="btn-secondary" onClick={() => navigate('/login')}>
-              Sign in
+            <button className="btn-secondary" onClick={() => navigate('/dashboard')}>
+              Dashboard
             </button>
           </div>
         </div>
@@ -22,15 +26,13 @@ const Home = () => {
         <div className="home-hero-glow"></div>
         <div className="home-hero-content">
           <h1>AI that decides your next revenue move</h1>
-          <p className="home-hero-subtitle">
-            Campaigns, pitches, and lead decisions — generated in real time.
-          </p>
-          <button className="btn-hero" onClick={() => navigate('/register')}>
-            Generate intelligence
+          <p className="home-hero-subtitle">Campaigns, pitches, and lead decisions — generated in real time.</p>
+          <button className="btn-hero" onClick={() => navigate('/dashboard')}>
+            Dashboard
           </button>
           <div className="live-strip">
             <span className="live-indicator">●</span>
-            <span className="live-text">New lead analyzed → Score 92 → Action: Schedule demo</span>
+            <span className="live-text">Free · No backend · Your API key stays in your browser</span>
           </div>
         </div>
       </div>
@@ -54,9 +56,7 @@ const Home = () => {
         </div>
       </div>
 
-      <footer className="home-footer">
-        <p>MarketMind · Enterprise AI</p>
-      </footer>
+      <footer className="home-footer"><p>MarketMind · Powered by Groq AI</p></footer>
     </div>
   );
 };
