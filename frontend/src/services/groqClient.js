@@ -1,33 +1,13 @@
-const GROQ_API = 'https://api.groq.com/openai/v1/chat/completions';
+const API = '/api/groq';
 
-function getKey() {
-  return sessionStorage.getItem('groqApiKey') || localStorage.getItem('groqApiKey') || '';
-}
-
-export function hasApiKey() {
-  return !!getKey();
-}
-
-export function setApiKey(key, persist = false) {
-  if (persist) localStorage.setItem('groqApiKey', key);
-  sessionStorage.setItem('groqApiKey', key);
-}
-
-export function clearApiKey() {
-  sessionStorage.removeItem('groqApiKey');
-  localStorage.removeItem('groqApiKey');
-}
+export function hasApiKey() { return true; }
+export function setApiKey() {}
+export function clearApiKey() {}
 
 async function groqChat(messages, options = {}) {
-  const key = getKey();
-  if (!key) throw new Error('Groq API key not set');
-
-  const res = await fetch(GROQ_API, {
+  const res = await fetch(API, {
     method: 'POST',
-    headers: {
-      'Authorization': `Bearer ${key}`,
-      'Content-Type': 'application/json',
-    },
+    headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({
       model: options.model || 'llama-3.3-70b-versatile',
       messages,
