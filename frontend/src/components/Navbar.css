@@ -1,9 +1,4 @@
 ﻿.navbar {
-  position: fixed;
-  top: 0;
-  left: 240px;
-  right: 0;
-  height: 52px;
   background: rgba(245, 245, 247, 0.8);
   backdrop-filter: saturate(180%) blur(20px);
   -webkit-backdrop-filter: saturate(180%) blur(20px);
@@ -11,6 +6,8 @@
   display: flex;
   align-items: center;
   padding: 0 32px;
+  position: sticky;
+  top: 0;
   z-index: 90;
 }
 
@@ -22,5 +19,5 @@
 }
 
 @media (max-width: 768px) {
-  .navbar { left: 72px; padding: 0 16px; }
+  .navbar { padding: 0 16px; }
 }

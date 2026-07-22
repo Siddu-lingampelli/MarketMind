@@ -12,11 +12,13 @@ import LeadScoring from './pages/LeadScoring';
 import './App.css';
 
 const Layout = ({ children }) => (
-  <>
+  <div className="layout">
     <Sidebar />
-    <Navbar />
-    {children}
-  </>
+    <div className="layout-main">
+      <Navbar />
+      <div className="layout-content">{children}</div>
+    </div>
+  </div>
 );
 
 function App() {

@@ -1,13 +1,11 @@
 ﻿.sidebar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 240px;
-  height: 100vh;
   background: var(--surface-tile-1);
   display: flex;
   flex-direction: column;
-  z-index: 100;
+  min-height: 100vh;
+  position: sticky;
+  top: 0;
+  align-self: start;
 }
 
 .sidebar-header {
@@ -70,8 +68,5 @@
 }
 
 @media (max-width: 768px) {
-  .sidebar { width: 72px; }
-  .sidebar-logo { display: none; }
-  .sidebar-nav-item { justify-content: center; padding: 0; }
-  .sidebar-nav-item span:not(.sidebar-nav-icon) { display: none; }
+  .sidebar { display: none; }
 }
