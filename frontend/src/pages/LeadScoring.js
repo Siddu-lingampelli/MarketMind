@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { scoreLead } from '../services/groqClient';
-import './LeadScoring.css';
+import './Campaign.css';
 
 const LeadScoring = () => {
   const navigate = useNavigate();

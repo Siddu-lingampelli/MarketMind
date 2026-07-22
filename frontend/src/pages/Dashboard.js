@@ -1,70 +1,57 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import { FaRocket, FaBullhorn, FaChartLine, FaArrowRight } from 'react-icons/fa';
+import { FaRocket, FaBullhorn, FaChartLine } from 'react-icons/fa';
 import './Dashboard.css';
 
 const Dashboard = () => {
   const navigate = useNavigate();
 
+  const actions = [
+    { id: 'campaign', label: 'Campaign Intelligence', desc: 'Generate marketing strategy', icon: <FaBullhorn />, path: '/campaign' },
+    { id: 'pitch', label: 'Sales Pitch Engine', desc: 'Create personalized pitch', icon: <FaRocket />, path: '/pitch' },
+    { id: 'lead', label: 'Lead Intelligence', desc: 'Score and qualify leads', icon: <FaChartLine />, path: '/lead-scoring' },
+  ];
+
   return (
-    <div className="workspace">
-      <div className="workspace-header">
-        <div>
-          <h1 className="workspace-title">Dashboard</h1>
-          <p className="workspace-subtitle">Intelligence tools — no backend, no database</p>
-        </div>
+    <div className="page">
+      <div style={{ marginBottom: 48 }}>
+        <h2>Dashboard</h2>
+        <p className="tile-lead" style={{ marginBottom: 0 }}>Intelligence tools — no backend, no database</p>
       </div>
 
-      <div className="metrics-grid">
-        <div className="metric-card">
+      <div className="metrics-strip">
+        <div className="metric-item">
           <div className="metric-label">Campaigns</div>
           <div className="metric-value">∞</div>
-          <div className="metric-change">Generate unlimited strategies</div>
+          <div className="metric-desc">Unlimited</div>
         </div>
-        <div className="metric-card">
-          <div className="metric-label">Sales Pitches</div>
+        <div className="metric-item">
+          <div className="metric-label">Pitches</div>
           <div className="metric-value">∞</div>
-          <div className="metric-change">Create unlimited pitches</div>
+          <div className="metric-desc">Unlimited</div>
         </div>
-        <div className="metric-card">
+        <div className="metric-item">
           <div className="metric-label">Leads</div>
           <div className="metric-value">∞</div>
-          <div className="metric-change">Score unlimited leads</div>
+          <div className="metric-desc">Unlimited</div>
         </div>
-        <div className="metric-card metric-card-hot">
+        <div className="metric-item metric-item-accent">
           <div className="metric-label">Cost</div>
-          <div className="metric-value metric-value-hot">$0</div>
-          <div className="metric-change">Free to run forever</div>
+          <div className="metric-value">$0</div>
+          <div className="metric-desc">Free forever</div>
         </div>
       </div>
 
-      <div className="workspace-section">
-        <h2 className="section-title">Quick Actions</h2>
-        <div className="quick-actions">
-          <button className="action-button action-primary" onClick={() => navigate('/campaign')}>
-            <div className="action-icon"><FaBullhorn /></div>
-            <div className="action-content">
-              <div className="action-title">Generate Campaign</div>
-              <div className="action-desc">Create marketing campaign strategy</div>
-            </div>
-            <FaArrowRight className="action-arrow" />
-          </button>
-          <button className="action-button" onClick={() => navigate('/pitch')}>
-            <div className="action-icon"><FaRocket /></div>
-            <div className="action-content">
-              <div className="action-title">Generate Pitch</div>
-              <div className="action-desc">Create personalized sales pitch</div>
-            </div>
-            <FaArrowRight className="action-arrow" />
-          </button>
-          <button className="action-button" onClick={() => navigate('/lead-scoring')}>
-            <div className="action-icon"><FaChartLine /></div>
-            <div className="action-content">
-              <div className="action-title">Score Lead</div>
-              <div className="action-desc">Analyze and qualify new lead</div>
-            </div>
-            <FaArrowRight className="action-arrow" />
-          </button>
+      <div style={{ marginTop: 48 }}>
+        <h4 style={{ marginBottom: 17 }}>Quick Actions</h4>
+        <div className="action-grid">
+          {actions.map(a => (
+            <button key={a.id} className="card action-card" onClick={() => navigate(a.path)}>
+              <div className="action-card-icon">{a.icon}</div>
+              <div className="action-card-label">{a.label}</div>
+              <div className="action-card-desc">{a.desc}</div>
+            </button>
+          ))}
         </div>
       </div>
     </div>

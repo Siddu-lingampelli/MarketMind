@@ -12,51 +12,53 @@ const Home = () => {
   return (
     <div className="home">
       <nav className="home-nav">
-        <div className="home-nav-content">
-          <div className="home-logo">MarketMind</div>
-          <div className="home-nav-actions">
-            <button className="btn-secondary" onClick={() => navigate('/dashboard')}>
-              Dashboard
-            </button>
-          </div>
-        </div>
+        <div className="home-logo">MarketMind</div>
+        <button className="btn-pill" onClick={() => navigate('/dashboard')}>Dashboard</button>
       </nav>
 
-      <div className="home-hero">
-        <div className="home-hero-glow"></div>
-        <div className="home-hero-content">
+      <section className="tile-light">
+        <div className="tile-content">
           <h1>AI that decides your next revenue move</h1>
-          <p className="home-hero-subtitle">Campaigns, pitches, and lead decisions — generated in real time.</p>
-          <button className="btn-hero" onClick={() => navigate('/dashboard')}>
-            Dashboard
-          </button>
-          <div className="live-strip">
-            <span className="live-indicator">●</span>
-            <span className="live-text">Free · No backend · Your API key stays in your browser</span>
+          <p className="tile-lead">Campaigns, pitches, and lead decisions — generated in real time.</p>
+          <div className="tile-actions">
+            <button className="btn-pill" onClick={() => navigate('/dashboard')}>Open Dashboard</button>
           </div>
         </div>
-      </div>
+      </section>
 
-      <div className="home-features">
-        <div className="home-features-content">
-          <div className="home-feature home-feature-primary">
-            <h3>Lead Intelligence</h3>
-            <p>AI-qualified leads with explainable probability scoring</p>
-          </div>
-          <div className="home-feature-secondary-grid">
-            <div className="home-feature">
-              <h3>Campaign Intelligence</h3>
-              <p>Revenue strategies with messaging frameworks</p>
-            </div>
-            <div className="home-feature">
-              <h3>Pitch Engine</h3>
-              <p>Executive presentations from customer context</p>
-            </div>
+      <section className="tile-dark">
+        <div className="tile-content">
+          <h2>Lead Intelligence</h2>
+          <p className="tile-lead">AI-qualified leads with explainable probability scoring.</p>
+          <div className="tile-actions">
+            <button className="btn-pill" onClick={() => navigate('/lead-scoring')}>Score Leads</button>
           </div>
         </div>
-      </div>
+      </section>
 
-      <footer className="home-footer"><p>MarketMind · Powered by Groq AI</p></footer>
+      <section className="tile-parchment">
+        <div className="tile-content">
+          <h2>Campaign Intelligence</h2>
+          <p className="tile-lead">Revenue strategies with messaging frameworks tailored to your audience.</p>
+          <div className="tile-actions">
+            <button className="btn-pill" onClick={() => navigate('/campaign')}>Generate Campaign</button>
+          </div>
+        </div>
+      </section>
+
+      <section className="tile-dark">
+        <div className="tile-content">
+          <h2>Pitch Engine</h2>
+          <p className="tile-lead">Executive presentations built from customer context in seconds.</p>
+          <div className="tile-actions">
+            <button className="btn-pill" onClick={() => navigate('/pitch')}>Create Pitch</button>
+          </div>
+        </div>
+      </section>
+
+      <footer className="home-footer">
+        <p>MarketMind · Powered by Groq AI</p>
+      </footer>
     </div>
   );
 };
