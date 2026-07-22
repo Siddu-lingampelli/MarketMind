@@ -1,5 +1,5 @@
 {
-  "name": "marketai-suite-frontend",
+  "name": "marketmind",
   "version": "1.0.0",
   "description": "MarketMind - AI Sales & Marketing Intelligence. Zero backend, zero database. Calls Groq API directly from browser.",
   "private": true,

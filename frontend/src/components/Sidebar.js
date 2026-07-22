@@ -1,6 +1,6 @@
 import React from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
-import { FaChartLine, FaBullhorn, FaRocket, FaTachometerAlt } from 'react-icons/fa';
+import { FaChartLine, FaBullhorn, FaRocket, FaTachometerAlt, FaHome } from 'react-icons/fa';
 import './Sidebar.css';
 
 const Sidebar = () => {
@@ -8,6 +8,7 @@ const Sidebar = () => {
   const location = useLocation();
 
   const menuItems = [
+    { id: 'home', label: 'Home', icon: <FaHome />, path: '/' },
     { id: 'dashboard', label: 'Dashboard', icon: <FaTachometerAlt />, path: '/dashboard' },
     { id: 'campaign', label: 'Campaign Intelligence', icon: <FaBullhorn />, path: '/campaign' },
     { id: 'pitch', label: 'Sales Pitch Engine', icon: <FaRocket />, path: '/pitch' },

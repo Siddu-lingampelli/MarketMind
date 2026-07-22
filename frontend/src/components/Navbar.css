@@ -1,5 +1,4 @@
-﻿/* ===== NAVBAR - MINIMAL TOP BAR ===== */
-.navbar {
+﻿.navbar {
   position: fixed;
   top: 0;
   left: 240px;
@@ -19,110 +18,8 @@
   color: var(--text-secondary);
 }
 
-.navbar-user {
-  display: flex;
-  align-items: center;
-  gap: var(--space-3);
-}
-
-.theme-toggle {
-  position: relative;
-  width: 52px;
-  height: 28px;
-  border-radius: 14px;
-  background: var(--border);
-  border: none;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  padding: 0;
-  overflow: hidden;
-}
-
-.theme-toggle::before {
-  content: '';
-  position: absolute;
-  top: 3px;
-  left: 3px;
-  width: 22px;
-  height: 22px;
-  border-radius: 50%;
-  background: var(--bg-surface);
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.theme-toggle:hover {
-  background: var(--border-hover);
-  transform: none;
-}
-
-.theme-toggle:active::before {
-  width: 26px;
-}
-
-[data-theme="minimal"] .theme-toggle {
-  background: var(--accent);
-}
-
-[data-theme="minimal"] .theme-toggle::before {
-  transform: translateX(24px);
-  background: white;
-}
-
-.theme-toggle:active {
-  transform: none;
-}
-
-.navbar-user-info {
-  display: flex;
-  align-items: center;
-  gap: var(--space-2);
-}
-
-.navbar-avatar {
-  width: 32px;
-  height: 32px;
-  border-radius: 50%;
-  background: var(--accent);
-  color: white;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: var(--text-sm);
-  font-weight: 600;
-}
-
-.navbar-username {
-  font-size: var(--text-sm);
-  font-weight: 500;
-  color: var(--text-primary);
-}
-
-.navbar-signout {
-  padding: 0 var(--space-2);
-  height: var(--space-4);
-  background: transparent;
-  color: var(--text-secondary);
-  border: 1px solid var(--border);
-  border-radius: var(--radius-sm);
-  font-size: var(--text-sm);
-  font-weight: 500;
-  cursor: pointer;
-  transition: all 0.15s ease;
-}
-
-.navbar-signout:hover {
-  border-color: var(--danger);
-  color: var(--danger);
-}
-
-/* ===== RESPONSIVE ===== */
 @media (max-width: 768px) {
   .navbar {
     left: 72px;
-  }
-  
-  .navbar-username {
-    display: none;
   }
 }
